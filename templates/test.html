@@ -1,0 +1,155 @@
+{% extends "index.html" %}
+{% block content %}
+
+<body class = "b">
+
+<header id="header" class="fixed-top" >
+  <div class="container">
+
+      <div class="logo float-left">
+        <a href="#intro" class="scrollto"><img src="" alt="" class="img-fluid">COVID UPDATES</a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="home">Home</a></li>
+          <li><a href="https://www.pmcares.gov.in/en/">Donate In PM CARES FUND</a></li>
+
+        </ul>
+      </nav>
+    </div>
+</header>
+
+<div class="container">
+<div class="col-md-8" style = "margin-top:10%;margin-left:10%">
+          {% with messages = get_flashed_messages(with_categories = true)  %}
+            {% if messages %}
+              {% for category,message in messages %}
+                <div class = "alert alert-{{ category}}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+</div>
+
+
+<div class="container" style = "margin:7%">
+<h1>Take Self Test</h1><br>
+        <form method ='POST',action="/test">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Are You Experiencing With Dry Cough ?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="1" id="exampleRadios1" value="20">
+                    <label class="form-check-label" for="1">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="1" id="exampleRadios1" value="5">
+                    <label class="form-check-label" for="1">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Are You Experiencing High Fever ?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="2" id="exampleRadios2" value="20">
+                    <label class="form-check-label" for="2">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="2" id="exampleRadios2" value="5">
+                    <label class="form-check-label" for="2">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Taste Become sore ?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="3" id="exampleRadios3" value="20">
+                    <label class="form-check-label" for="3">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="3" id="exampleRadios3" value="5">
+                    <label class="form-check-label" for="3">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Diificulty in Breathing ?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="4" id="exampleRadios4" value="20">
+                    <label class="form-check-label" for="4">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="4" id="exampleRadios4" value="5">
+                    <label class="form-check-label" for="4">No</label>
+                </div>
+            </div>
+          <button type="submit" class="btn btn-primary" style="float:right">Check</button>
+          </form>
+                
+            
+ </div>       
+</div>
+ 
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4 footer-info">
+            <h3>Corona Updates</h3>
+            <p>
+              Here you can Find Most of the updated detail of or Corona Covid 19<br> <h5 style = "font-style:italic">"Stay Home Be Safe"</h5>
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-4 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#about">About corona</a></li>
+              <li><a href="#why-us">Updates</a></li>
+              <li><a href="#services">Latest News</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-4 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              40 , Saharanpur <br>
+              UttarPardesh, 247001<br>
+              INDIA <br>
+              <strong>Phone:</strong>+91 6397365442<br>
+              <strong>Email:</strong> arpit09chuahan@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+      <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Take Self Assesment</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+{% endblock content %}
